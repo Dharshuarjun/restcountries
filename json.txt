@@ -1,0 +1,37 @@
+_.isEqual(value, other):
+
+    Performs a deep comparison between two values to determine if they are equivalent.
+
+Note: This method supports comparing arrays, array buffers, booleans, date objects, error objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and typed arrays. Object objects are compared by their own, not inherited, enumerable properties. Functions and DOM nodes are compared by strict equality, i.e. ===.
+
+Arguments:
+value (*): The value to compare.
+other (*): The other value to compare.
+
+Returns:
+(boolean): Returns true if the values are equivalent, else false.
+Example:
+
+var object = { 'a': 1 };
+var other = { 'a': 1 };
+ 
+_.isEqual(object, other);
+// => true
+ 
+object === other;
+// => false
+const object1 = {
+  name: 'Person1',
+  age: '5'
+};
+    
+const object2 = {
+  age: '5',
+  name: 'Person1'
+};
+    
+JSON.stringify(object1) === JSON.stringify(object2)
+// false
+
+_.isEqual(object1, object2)
+// true
